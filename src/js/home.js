@@ -53,3 +53,25 @@ Promise.race([
 .catch(function(message) {
   console.log(message)
 })
+
+$.ajax('https://randomuser.me/api/sdghdsfh', {
+  method: 'GET',
+  success: function(data) {
+    console.log(data)
+  },
+  error: function(error) {
+    console.log(error)
+  }
+}) 
+
+fetch('https://randomuser.me/api/2485')
+  .then(function(response) {
+//    console.log(response)
+    return response.json()
+  })
+  .then(function (user) {
+    console.log("user", user.results[0].name.first)
+  })
+  .catch(function() {
+    console.log('algo fallo')
+  })
