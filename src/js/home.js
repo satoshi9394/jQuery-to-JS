@@ -98,4 +98,22 @@ fetch('https://randomuser.me/api/2485')
       terrorList = data;
     }) */
   console.log(actionList, dramaList, animationList);  
+  // pesitos simbolo es para referenciar a un elemento del dom
+  // como se hace en jquery
+  //const $home = $('.home .list #item')
+  const $actionContainer = document.querySelector('#action');
+  const $dramaContainer = document.getElementById('#drama');
+  const $animationContainer = document.querySelector('#animation');
+
+  const $featuringContainer = document.getElementById('#featuring');
+  const $formContainer = document.getElementById('#from');
+  const $home =document.getElementById('#home'); 
+
+  const $modal = document.getElementById('modal');
+  const $overlay = document.getElementById('overlay');
+  const $hideModal = document.getElementById('hideModal');
+
+  const $modalTitle = $modal.querySelector('h1');
+  const $modalImage = $modal.querySelector('img');
+  const $modalDescription = $modal.querySelector('p');
 })()
