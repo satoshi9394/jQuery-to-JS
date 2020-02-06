@@ -1,4 +1,4 @@
-console.log('hola mundo!');
+/* console.log('hola mundo!');
 const noCambia = "Leonidas";
 
 let cambia = "@LeonidasEsteban"
@@ -21,7 +21,7 @@ const getUser = new Promise(function(todoBien, todoMal) {
     //luego de 3 seg.
     todoBien('no hay usuarios o se acabo el tiempo');
   }, 3000)
-})
+}) */
 
 /* getUser
   .then(function(){
@@ -43,7 +43,7 @@ const getUser = new Promise(function(todoBien, todoMal) {
   console.log(message)
 }) */
 //en este caso solo entra a la promesa que se termine primero
-Promise.race([
+/* Promise.race([
   getUser,
   getUserAll
 ])
@@ -74,4 +74,28 @@ fetch('https://randomuser.me/api/2485')
   })
   .catch(function() {
     console.log('algo fallo')
-  })
+  }); */
+
+
+(async function load() {
+    //await 
+    //action
+    //terror
+    //animation
+    async function getData(url) {
+      const response =  await fetch(url);
+      const data = await response.json();
+      return data;
+    }
+  const actionList = await getData('https://yts.mx/api/v2/list_movies.json?genre=action');
+  const dramaList = await getData('https://yts.mx/api/v2/list_movies.json?genre=drama');
+  const animationList = await getData('https://yts.mx/api/v2/list_movies.json?genre=animation');
+/*otra forma de hacerlo con promesas 
+  let terrorList;
+  getData('https://yts.mx/api/v2/list_movies.json?genre=terror')
+    .then(function(data) {
+      console.log('terrorList', data);
+      terrorList = data;
+    }) */
+  console.log(actionList, dramaList, animationList);  
+})()
